@@ -4,6 +4,7 @@ import { searchBox, hits, pagination } from 'instantsearch.js/es/widgets';
 
 const searchClient = algoliasearch('DQKYJZ60KR', 'bcff1e79cab07ec6b399cd140c782ec3');
 
+
 const search = instantsearch({
   indexName: 'projects',
   searchClient,

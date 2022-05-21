@@ -18,11 +18,17 @@ class Project extends Model
         'project_env_status'
     ];
 
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+
     public function project_creator()
     {
         return $this->hasManyThrough(
-            '\App\Models\ProjectCreator',
-            '\App\Models\ProjectCreatorModel',
+            ProjectCreator::class,
+            ProjectCreatorModel::class,
             'project_id',
             'id',
             'id',
@@ -34,10 +40,14 @@ class Project extends Model
     {
         $array = $this->toArray();
 
+        $array = $this->transform($array);
+
         $array['project_creator'] = $this->project_creator->map(function ($data) {
             return $data['project_creator_name'];
         })->toArray();
 
         return $array;
     }
+
+
 }

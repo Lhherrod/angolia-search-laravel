@@ -37,11 +37,10 @@ class ProjectCreatorsController extends Controller
      */
     public function store(StoreProjectCreatorRequest $request)
     {
-        // $faker = \Faker\Factory::create(1);
+        $faker = \Faker\Factory::create(1);
 
         $project_creator = ProjectCreator::create([
-            // 'project_creator_name' => $faker->name,
-            'project_creator_name' => 'The Grand Pumba',
+            'project_creator_name' => $faker->name,
             'number_of_projects' => 0,
             'number_of_completed_projects' => 0,
             'number_of_non_completed_projects' => 0,

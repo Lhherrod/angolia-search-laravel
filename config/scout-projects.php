@@ -22,7 +22,6 @@ return [
         'project_end_date',
         'project_status',
         'project_env_status',
-        'project_creator',
     ],
 
     /*

@@ -17,7 +17,7 @@ return new class extends Migration
            $table->unsignedBigInteger('project_creator_id');
            $table->foreign('project_creator_id')
                 ->references('id')
-                ->on('project_creators')
+                ->on('creators')
                 ->cascade('delete');
             $table->unsignedBigInteger('project_id');
             $table->foreign('project_id')
